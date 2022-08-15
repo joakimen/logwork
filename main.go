@@ -15,8 +15,8 @@ import (
 	flag "github.com/spf13/pflag"
 )
 
-const API_TOKEN = "JIRA_API_TOKEN"
-const JIRA_HOST= "JIRA_HOST"
+const apiToken = "JIRA_API_TOKEN"
+const jiraHost= "JIRA_HOST"
 
 type WorkLog struct {
 	Comment          string `json:"comment"`
@@ -51,8 +51,8 @@ func main() {
 		invalidArgExit("refusing to log work with empty message.")
 	}
 
-	apiToken := getEnvStrict(API_TOKEN)
-	jiraHost := getEnvStrict(JIRA_HOST)
+	apiToken := getEnvStrict(apiToken)
+	jiraHost := getEnvStrict(jiraHost)
 
 	worklog := WorkLog{
 		Comment:          *comment,
